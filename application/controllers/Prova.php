@@ -57,7 +57,7 @@ class Prova extends CI_Controller {
 
                 $this->load->view('FormProva', $pv);
             } else {
-                $data = array(
+                $pv = array(
                     'nome' => $this->input->post('nome'),
                     'tempo' => $this->input->post('tempo'),
                     'descricao' => $this->input->post('descricao'),
