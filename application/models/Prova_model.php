@@ -12,4 +12,10 @@ class Prova_model extends CI_Model {
         return $this->db->affected_rows();
     }
 
+    public function getOne($id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get('prova');
+        return $query->row(0);
+    }
+
 }
