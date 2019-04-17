@@ -16,9 +16,9 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th> Nome</th>
-                    <th><i class="fas fa-hourglass-half"></i>          Tempo</th>
-                    <th>Descrição</th>
+                    <th> <i class="fas fa-anchor"></i> Nome</th>
+                    <th><i class="fas fa-hourglass-half"></i> Tempo</th>
+                    <th> <i class="fas fa-american-sign-language-interpreting"></i>     Descrição </th>
                     <th><i class="fas fa-sort-numeric-up"></i>         Número de Integrantes</th>
                 </tr>
             </thead>
@@ -31,9 +31,9 @@
                     echo '<td>' . $p->descricao . '</td>';
                     echo '<td>' . $p->NmIntegrantes . '</td>';
                     echo '<td>'
-                    . '<a href="' . $this->config->base_url() . 'index.php/Prova/alterar/' . $p->id . '">Alterar</a>'
+                    . '<a href="' . $this->config->base_url() . 'index.php/Prova/alterar/' . $p->id . '"> <i class="fas fa-exchange-alt"></i>  Alterar</a>'
                     . ' / '
-                    . '<a href="' . $this->config->base_url() . 'index.php/Prova/deletar/' . $p->id . '">Deletar</a>'
+                    . '<a href="' . $this->config->base_url() . 'index.php/Prova/deletar/' . $p->id . '"> <i class="fas fa-trash-alt"></i>    Deletar</a>'
                     . '</td>';
                     echo '</tr>';
                 }
