@@ -43,4 +43,37 @@ class Prova extends CI_Controller {
             }
         }
     }
-    
+
+    public function alterar($id) {
+        if ($id > 0) {
+            $this->load->model('Prova_model');
+            $this->form_validation->set_rules('nome', 'nome', 'required');
+            $this->form_validation->set_rules('tempo', 'tempo', 'required');
+            $this->form_validation->set_rules('descricao', 'descricao', 'required');
+            $this->form_validation->set_rules('NmIntegrantes', 'NmIntegrantes', 'required');
+
+            if ($this->form_validation->run() === false) {
+                $pv['prova'] = $this->Prova_model->getOne($id);
+
+                $this->load->view('FormProva', $pv);
+            } else {
+                $data = array(
+                    'nome' => $this->input->post('nome'),
+                    'tempo' => $this->input->post('tempo'),
+                    'descricao' => $this->input->post('descricao'),
+                    'NmIntegrantes' => $this->input->post('NmIntegrantes'),
+                );
+                if ($this->Prova_model->update($id, $pv)) {
+                    $this->session->set_flashdata('mensagem', 'Prova alterada com sucesso!!!');
+                    redirect('Prova/listar');
+                } else {
+                    $this->session->set_flashdata('mensagem', 'Erro ao alterar!!!');
+                    redirect('Prova/alterar/' . $id);
+                }
+            }
+        } else {
+            redirect('Prova/listar');
+        }
+    }
+
+}
