@@ -31,9 +31,9 @@
                     echo '<td>' . $p->descricao . '</td>';
                     echo '<td>' . $p->NmIntegrantes . '</td>';
                     echo '<td>'
-                    . '<a href="' . $this->config->base_url() . 'index.php/prova/alterar/' . $p->id . '">Alterar</a>'
+                    . '<a href="' . $this->config->base_url() . 'index.php/Prova/alterar/' . $p->id . '">Alterar</a>'
                     . ' / '
-                    . '<a href="' . $this->config->base_url() . 'index.php/prova/deletar/' . $p->id . '">Deletar</a>'
+                    . '<a href="' . $this->config->base_url() . 'index.php/Prova/deletar/' . $p->id . '">Deletar</a>'
                     . '</td>';
                     echo '</tr>';
                 }
