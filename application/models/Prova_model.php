@@ -1,8 +1,15 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+class Prova_model extends CI_Model {
 
+    public function getALL() {
+        $query = $this->db->get('prova');
+        return $query->result();
+    }
+
+    public function insert($pv = array()) {
+        $this->db->insert('prova', $pv);
+        return $this->db->affected_rows();
+    }
+
+}
