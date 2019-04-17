@@ -7,18 +7,18 @@
     </head>
     <body>
         <form action = "" method = "post">
-            <input type = "hidden" name = "id" value = "">
+            <input type = "hidden" name = "id" value = "<?= (isset($prova)) ? $prova->id : ''; ?>">
             <label for = "nome"> Nome:</label>
-            <input type = "text" name = "nome" id = "nome" value = "">
+            <input type = "text" name = "nome" id = "nome" value = "<?= (isset($prova)) ? $prova->nome : ''; ?>">
             <br>
             <label for = "tempo">Tempo:</label>
-            <input type = "text" name = "tempo" id = "tempo" value = "">
+            <input type = "text" name = "tempo" id = "tempo" value = "<?= (isset($prova)) ? $prova->tempo : ''; ?>">
             <br>
             <label for = "descricao"> Descrição:</label>
-            <input type = "text" name = "descricao" id = "descricao" value = "">
+            <input type = "text" name = "descricao" id = "descricao" value = "<?= (isset($prova)) ? $prova->descricao : ''; ?>">
             <br>    
             <label for = "NmIntegrantes"> Numero de Integrantes:</label>
-            <input type = "text" name = "NmIntegrantes" id = "NmIntegrantes" value = "">
+            <input type = "text" name = "NmIntegrantes" id = "NmIntegrantes" value = "<?= (isset($prova)) ? $prova->NmIntegrantes : ''; ?>">
             <br>
 
             <button type = "submit">Enviar</button>
