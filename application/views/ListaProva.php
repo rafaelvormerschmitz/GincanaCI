@@ -13,32 +13,36 @@
             echo $mensagem;
         }
         ?>
-        <table border="1">
+        <br>
+        <br>
+        <table class="table table-sm">
             <thead>
                 <tr>
-                    <th> <i class="fas fa-anchor"></i> Nome</th>
-                    <th><i class="fas fa-hourglass-half"></i> Tempo</th>
-                    <th> <i class="fas fa-american-sign-language-interpreting"></i>     Descrição </th>
-                    <th><i class="fas fa-sort-numeric-up"></i>         Número de Integrantes</th>
+                    <th scope="col"><th> <i class="fas fa-anchor"></i> Nome</th></th>
+                    <th scope="col"><th><i class="fas fa-hourglass-half"></i> Tempo</th></th>
+                    <th scope="col"><i class="fas fa-american-sign-language-interpreting"></i> Descrição</th>
+                    <th scope="col"><i class="fas fa-sort-numeric-up"></i> Número de Integrantes</th>
                 </tr>
             </thead>
-            <tbody>
-                <?php
-                foreach ($prova as $p) {
-                    echo '<tr>';
-                    echo '<td>' . $p->nome . '</td>';
-                    echo '<td>' . $p->tempo . '</td>';
-                    echo '<td>' . $p->descricao . '</td>';
-                    echo '<td>' . $p->NmIntegrantes . '</td>';
-                    echo '<td>'
-                    . '<a href="' . $this->config->base_url() . 'index.php/Prova/alterar/' . $p->id . '"> <i class="fas fa-exchange-alt"></i>  Alterar</a>'
-                    . ' / '
-                    . '<a href="' . $this->config->base_url() . 'index.php/Prova/deletar/' . $p->id . '"> <i class="fas fa-trash-alt"></i>    Deletar</a>'
-                    . '</td>';
-                    echo '</tr>';
-                }
-                ?>
-            </tbody>
-        </table>
-    </body>
+
+
+    <tbody>
+        <?php
+        foreach ($prova as $p) {
+            echo '<tr>';
+            echo '<td>' . $p->nome . '</td>';
+            echo '<td>' . $p->tempo . '</td>';
+            echo '<td>' . $p->descricao . '</td>';
+            echo '<td>' . $p->NmIntegrantes . '</td>';
+            echo '<td>'
+            . '<a href="' . $this->config->base_url() . 'index.php/Prova/alterar/' . $p->id . '"> <i class="fas fa-exchange-alt"></i>  Alterar</a>'
+            . ' / '
+            . '<a href="' . $this->config->base_url() . 'index.php/Prova/deletar/' . $p->id . '"> <i class="fas fa-trash-alt"></i>    Deletar</a>'
+            . '</td>';
+            echo '</tr>';
+        }
+        ?>
+    </tbody>
+</table>
+</body>
 </html>
