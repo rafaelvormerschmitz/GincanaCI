@@ -8,6 +8,12 @@ class Prova extends CI_Controller {
         $this->listar();
     }
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('Usuario_model');
+        $this->Usuario_model->verificaLogin();
+    }
+
     public function listar() {
         $this->load->model('Prova_model');
 
