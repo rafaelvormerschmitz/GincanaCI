@@ -18,7 +18,9 @@ class Prova extends CI_Controller {
         $this->load->model('Prova_model');
 
         $pv['prova'] = $this->Prova_model->getAll();
+        $this->load->view('Header');
         $this->load->view('ListaProva', $pv);
+        $this->load->view('Footer');
     }
 
     public function cadastrar() {
@@ -29,7 +31,9 @@ class Prova extends CI_Controller {
         $this->form_validation->set_rules('NmIntegrantes', 'NmIntegrantes', 'required');
         if ($this->form_validation->run() === FALSE) {
 
+            $this->load->view('Header');
             $this->load->view('FormProva');
+            $this->load->view('Footer');
         } else {
 
             $this->load->model('Prova_model');
@@ -60,8 +64,9 @@ class Prova extends CI_Controller {
 
             if ($this->form_validation->run() === false) {
                 $pv['prova'] = $this->Prova_model->getOne($id);
-
+                $this->load->view('Header');
                 $this->load->view('FormProva', $pv);
+                $this->load->view('Footer');
             } else {
                 $pv = array(
                     'nome' => $this->input->post('nome'),
@@ -86,9 +91,9 @@ class Prova extends CI_Controller {
         if ($id > 0) {
             $this->load->model('Prova_model');
             if ($this->Prova_model->delete($id)) {
-                $this->session->set_flashdata('mensagem', 'Prova deletada com sucesso!!!');
+                $this->session->set_flashdata('mensagem', 'Prova deletada com sucesso!');
             } else {
-                $this->session->set_flashdata('mensagem', 'Falha ao deletar a prova!!!');
+                $this->session->set_flashdata('mensagem', 'Falha ao deletar a prova!');
             }
         }
         redirect('prova/listar');
