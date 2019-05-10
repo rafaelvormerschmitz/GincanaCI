@@ -1,8 +1,8 @@
-<?php
-$mensagem = $this->session->flashdata('mensagem');
-echo (isset($mensagem) ? '<div class="alert alert-success" role="alert">' . $mensagem . '</div>' : '');
-?> 
 <div class="container">
+    <?php
+    $mensagem = $this->session->flashdata('mensagem');
+    echo (isset($mensagem) ? '<div class="alert alert-success" role="alert">' . $mensagem . '</div>' : '');
+    ?> 
     <div class="table-responsive">
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
@@ -24,8 +24,8 @@ echo (isset($mensagem) ? '<div class="alert alert-success" role="alert">' . $men
                     echo '<td>' . $p->descricao . '</td>';
                     echo '<td>' . $p->NmIntegrantes . '</td>';
                     echo '<td>'
-                    . '<a href="' . $this->config->base_url() . 'Prova/alterar' . $p->id . '"> <i class="fas fa-exchange-alt"></i>  Alterar</a>'
-                    . '<a href="' . $this->config->base_url() . 'Prova/deletar' . $p->id . '"> <i class="fas fa-trash-alt"></i>    Deletar</a>'
+                    . '<a href="' . $this->config->base_url() . 'Prova/alterar/' . $p->id . '"> <i class="fas fa-exchange-alt"></i>  Alterar</a>'
+                    . '<a href="' . $this->config->base_url() . 'Prova/deletar/' . $p->id . '"> <i class="fas fa-trash-alt"></i>    Deletar</a>'
                     . '</td>';
                     echo '</tr>';
                 }

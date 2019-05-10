@@ -18,6 +18,7 @@ class Prova extends CI_Controller {
         $this->load->model('Prova_model');
 
         $pv['prova'] = $this->Prova_model->getAll();
+        
         $this->load->view('Header');
         $this->load->view('ListaProva', $pv);
         $this->load->view('Footer');
@@ -76,14 +77,14 @@ class Prova extends CI_Controller {
                 );
                 if ($this->Prova_model->update($id, $pv)) {
                     $this->session->set_flashdata('mensagem', 'Prova alterada com sucesso!!!');
-                    redirect('prova/listar');
+                    redirect('Prova/listar');
                 } else {
                     $this->session->set_flashdata('mensagem', 'Erro ao alterar!!!');
-                    redirect('prova/alterar/' . $id);
+                    redirect('Prova/alterar/' . $id);
                 }
             }
         } else {
-            redirect('prova/listar');
+            redirect('Prova/listar');
         }
     }
 
