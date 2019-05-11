@@ -24,11 +24,11 @@
                             </div>
                         </li>
                         
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown ">
                             <a href="#" id="menuEquipe" class="nav-link dropdown-toggle" data-toggle="dropdown">
                                 Equipes
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="menuEquipe">
+                            <div class="dropdown-menu "  aria-labelledby="menuEquipe">
                                 <a href="<?= $this->config->base_url() . 'Equipe/listar'; ?>" class="dropdown-item">Listar</a>
                                 <a href="<?= $this->config->base_url() . 'Equipe/cadastrar'; ?>" class="dropdown-item">Cadastrar</a>
                             </div>

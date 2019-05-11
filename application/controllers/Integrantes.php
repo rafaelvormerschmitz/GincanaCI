@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Equipe extends CI_Controller {
+class Integrantes extends CI_Controller {
 
     public function index() {
         $this->listar();
@@ -11,6 +11,7 @@ class Equipe extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Integrantes_model');
+        $this->load->model('Equipe_model');
     }
 
     public function listar() {
@@ -26,11 +27,13 @@ class Equipe extends CI_Controller {
 
         $this->form_validation->set_rules('id_equipe', 'id_equipe', 'required');
         $this->form_validation->set_rules('nome', 'nome', 'required');
-     
+
         if ($this->form_validation->run() === FALSE) {
 
+            $dados['equipe'] = $this->Equipe_model->getAll();
+
             $this->load->view('Header');
-            $this->load->view('FormIntegrantes');
+            $this->load->view('FormIntegrantes', $dados);
             $this->load->view('Footer');
         } else {
 
@@ -62,6 +65,9 @@ class Equipe extends CI_Controller {
 
             if ($this->form_validation->run() === false) {
                 $it['integrantes'] = $this->Integrantes_model->getOne($id);
+                $it['equipe'] = $this->Equipe_model->getOne($id);
+
+
                 $this->load->view('Header');
                 $this->load->view('FormIntegrantes', $it);
                 $this->load->view('Footer');

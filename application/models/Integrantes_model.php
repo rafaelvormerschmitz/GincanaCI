@@ -1,9 +1,12 @@
 <?php
 
-class Integrantes extends CI_Model {
+class Integrantes_model extends CI_Model {
 
     public function getALL() {
-        $query = $this->db->get('integrantes');
+        $this->db->select('integrantes.*, equipe.nome as nm');
+        $this->db->from('integrantes');
+        $this->db->join('equipe', 'equipe.id = integrantes.id_equipe', 'inner');
+        $query = $this->db->get();
         return $query->result();
     }
 

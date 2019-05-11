@@ -9,8 +9,15 @@
                 <input type = "hidden" name = "id" value = "<?= (isset($integrantes)) ? $integrantes->id : ''; ?>">
 
                 <div class="form-group">
-                    <label for = "id_equipe"> id_equipe:</label>
-                    <input type = "text" name = "id_equipe"  class="form-control" id = "id_equipe" value = "<?= (isset($integrantes)) ? $integrantes->id_equipe: ''; ?>">
+                    <select name="id_equipe" id="id_equipe" class="form-control">
+                        <option>Selecione uma Equipe</option>
+                        <?php
+                        foreach ($equipe as $ep) {
+                            echo ' <option ' . (isset($integrantes) ? ($integrantes->id_equipe == $ep->id ? 'selected ' : NULL) : NULL) . ' value="' . $ep->id . '">' . $ep->nome . ' </option>';
+                        }
+                        ?>
+                                                
+                    </select>
                 </div>
 
                 <div class="form-group">
@@ -19,8 +26,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for = "data_nasc"> data_nasc:</label>
-                    <input type = "text" name = "data_nasc"  class="form-control" id = "data_nasc" value = "<?= (isset($integrantes)) ? $integrantes->data_nasc : ''; ?>">
+                    <label for = "data_nasc"> Data de Nascimento:</label>
+                    <input type = "date" name = "data_nasc"  class="form-control" id = "data_nasc" value = "<?= (isset($integrantes)) ? $integrantes->data_nasc : ''; ?>">
                 </div>
 
                 <div class="form-group">
@@ -30,7 +37,7 @@
 
                 <div class="form-group">
                     <label for = "cpf"> CPF:</label>
-                    <input type = "text" name = "cpf"  class="form-control" id = "cpf" value = "<?= (isset($integrantes)) ? $integrantes->cpf: ''; ?>">
+                    <input type = "text" name = "cpf"  class="form-control" id = "cpf" value = "<?= (isset($integrantes)) ? $integrantes->cpf : ''; ?>">
                 </div>
 
 

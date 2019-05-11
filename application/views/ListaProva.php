@@ -4,7 +4,7 @@
     echo (isset($mensagem) ? '<div class="alert alert-success" role="alert">' . $mensagem . '</div>' : '');
     ?> 
     <div class="table-responsive">
-        <table class="table table-striped table-bordered">
+        <table class="table table-striped table-dark">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col"><i class="fas fa-anchor"></i> Nome</th></th>
@@ -24,8 +24,8 @@
                     echo '<td>' . $p->descricao . '</td>';
                     echo '<td>' . $p->NmIntegrantes . '</td>';
                     echo '<td>'
-                    . '<a href="' . $this->config->base_url() . 'Prova/alterar/' . $p->id . '"> <i class="fas fa-exchange-alt"></i>  Alterar</a>'
-                    . '<a href="' . $this->config->base_url() . 'Prova/deletar/' . $p->id . '"> <i class="fas fa-trash-alt"></i>    Deletar</a>'
+                    . '<a class="btn btn-outline-light" href="' . $this->config->base_url() . 'Prova/alterar/' . $p->id . '"> <i class="fas fa-exchange-alt"></i>  Alterar</a>'
+                    . '<a class="btn btn-danger" href="' . $this->config->base_url() . 'Prova/deletar/' . $p->id . '"> <i class="fas fa-trash-alt"></i>    Deletar</a>'
                     . '</td>';
                     echo '</tr>';
                 }

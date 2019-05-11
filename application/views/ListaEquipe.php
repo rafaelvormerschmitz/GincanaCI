@@ -4,8 +4,8 @@
     echo (isset($mensagem) ? '<div class="alert alert-success" role="alert">' . $mensagem . '</div>' : '');
     ?> 
     <div class="table-responsive">
-        <table class="table table-dark">
-            <thead class="thead-dark">
+        <table class="table table-striped table-dark">
+            <thead  class="thead-dark">
                 <tr>
                     <th scope="col"><i class="fas fa-anchor"></i> Nome</th>
                     <th scope="col"><i class="fas fa-location-arrow"></i> Ações</th>
