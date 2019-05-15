@@ -18,4 +18,9 @@ class Usuario_model extends CI_Model {
         }
     }
 
+    public function getAll() {
+        $query = $this->db->get('usuario1');
+        return $query->result();
+    }
+
 }

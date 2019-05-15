@@ -8,7 +8,7 @@
             <table class="table table-striped table-dark">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col"><i class="far fa-id-badge"></i>id_equipe</th>
+                        <th scope="col"><i class="far fa-id-badge"></i>Id da Equipe</th>
                         <th scope="col"><i class="fas fa-anchor"></i>Nome</th>
                         <th scope="col"><i class="far fa-calendar-alt"></i>Data de Nascimento</th>
                         <th scope="col"><i class="fas fa-id-card"></i>RG</th>
@@ -20,7 +20,7 @@
                     <?php
                     foreach ($integrantes as $it) {
                         echo '<tr>';
-                        echo '<td>' . $it->id_equipe . '</td>';
+                        echo '<td>' . $it->nm . '</td>';
                         echo '<td>' . $it->nome . '</td>';
                         echo '<td>' . $it->data_nasc . '</td>';
                         echo '<td>' . $it->rg . '</td>';

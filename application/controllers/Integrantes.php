@@ -15,8 +15,7 @@ class Integrantes extends CI_Controller {
     }
 
     public function listar() {
-        $this->load->model('Integrantes_model');
-
+       
         $it['integrantes'] = $this->Integrantes_model->getAll();
         $this->load->view('Header');
         $this->load->view('ListaIntegrantes', $it);
@@ -37,7 +36,6 @@ class Integrantes extends CI_Controller {
             $this->load->view('Footer');
         } else {
 
-            $this->load->model('Integrantes_model');
 
             $it = array(
                 'id_equipe' => $this->input->post('id_equipe'),
@@ -58,14 +56,13 @@ class Integrantes extends CI_Controller {
 
     public function alterar($id) {
         if ($id > 0) {
-            $this->load->model('Integrantes_model');
 
             $this->form_validation->set_rules('id_equipe', 'id_equipe', 'required');
             $this->form_validation->set_rules('nome', 'nome', 'required');
 
             if ($this->form_validation->run() === false) {
                 $it['integrantes'] = $this->Integrantes_model->getOne($id);
-                $it['equipe'] = $this->Equipe_model->getOne($id);
+                $it['equipe'] = $this->Equipe_model->getAll();
 
 
                 $this->load->view('Header');
@@ -94,9 +91,8 @@ class Integrantes extends CI_Controller {
 
     public function deletar($id) {
         if ($id > 0) {
-            $this->load->model('Integrantes_model');
             if ($this->Integrantes_model->delete($id)) {
-                $this->session->set_flashdata('mensagem', 'Integrante deletada com sucesso!');
+                $this->session->set_flashdata('mensagem', 'Integrante deletado com sucesso!');
             } else {
                 $this->session->set_flashdata('mensagem', 'Falha ao deletar o Integrante!');
             }

@@ -11,14 +11,14 @@ class Prova extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Usuario_model');
+        $this->load->model('Prova_model');
         $this->Usuario_model->verificaLogin();
     }
 
     public function listar() {
-        $this->load->model('Prova_model');
 
         $pv['prova'] = $this->Prova_model->getAll();
-        
+
         $this->load->view('Header');
         $this->load->view('ListaProva', $pv);
         $this->load->view('Footer');
@@ -36,9 +36,7 @@ class Prova extends CI_Controller {
             $this->load->view('FormProva');
             $this->load->view('Footer');
         } else {
-
-            $this->load->model('Prova_model');
-
+       
             $pv = array(
                 'nome' => $this->input->post('nome'),
                 'tempo' => $this->input->post('tempo'),
@@ -57,7 +55,6 @@ class Prova extends CI_Controller {
 
     public function alterar($id) {
         if ($id > 0) {
-            $this->load->model('Prova_model');
             $this->form_validation->set_rules('nome', 'nome', 'required');
             $this->form_validation->set_rules('tempo', 'tempo', 'required');
             $this->form_validation->set_rules('descricao', 'descricao', 'required');
@@ -90,7 +87,6 @@ class Prova extends CI_Controller {
 
     public function deletar($id) {
         if ($id > 0) {
-            $this->load->model('Prova_model');
             if ($this->Prova_model->delete($id)) {
                 $this->session->set_flashdata('mensagem', 'Prova deletada com sucesso!');
             } else {

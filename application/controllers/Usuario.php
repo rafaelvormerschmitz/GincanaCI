@@ -8,6 +8,11 @@ class Usuario extends CI_Controller {
         $this->load->view('Login');
     }
 
+    public function __construct() {
+        parent::__construct();
+        $this->load->model('Usuario_model');
+    }
+
     public function login() {
         $this->form_validation->set_rules('email', 'email', 'required');
         $this->form_validation->set_rules('senha', 'senha', 'required');

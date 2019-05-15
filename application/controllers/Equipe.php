@@ -14,7 +14,6 @@ class Equipe extends CI_Controller {
     }
 
     public function listar() {
-        $this->load->model('Equipe_model');
         $eq['equipe'] = $this->Equipe_model->getAll();
         $this->load->view('Header');
         $this->load->view('ListaEquipe', $eq);
@@ -48,7 +47,6 @@ class Equipe extends CI_Controller {
 
     public function alterar($id) {
         if ($id > 0) {
-            $this->load->model('Equipe_model');
             $this->form_validation->set_rules('nome', 'nome', 'required');
 
             if ($this->form_validation->run() === false) {
@@ -75,7 +73,6 @@ class Equipe extends CI_Controller {
 
     public function deletar($id) {
         if ($id > 0) {
-            $this->load->model('Equipe_model');
             if ($this->Equipe_model->delete($id)) {
                 $this->session->set_flashdata('mensagem', 'Equipe deletada com sucesso!');
             } else {

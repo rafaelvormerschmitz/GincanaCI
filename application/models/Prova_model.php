@@ -2,7 +2,7 @@
 
 class Prova_model extends CI_Model {
 
-    public function getALL() {
+    public function getAll() {
         $query = $this->db->get('prova');
         return $query->result();
     }

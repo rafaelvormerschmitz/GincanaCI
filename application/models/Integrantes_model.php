@@ -2,7 +2,7 @@
 
 class Integrantes_model extends CI_Model {
 
-    public function getALL() {
+    public function getAll() {
         $this->db->select('integrantes.*, equipe.nome as nm');
         $this->db->from('integrantes');
         $this->db->join('equipe', 'equipe.id = integrantes.id_equipe', 'inner');

@@ -2,7 +2,7 @@
 
 class Equipe_model extends CI_Model {
 
-    public function getALL() {
+    public function getAll() {
         $query = $this->db->get('equipe');
         return $query->result();
     }

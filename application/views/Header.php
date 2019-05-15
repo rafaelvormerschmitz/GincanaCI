@@ -23,7 +23,7 @@
                                 <a href="<?= $this->config->base_url() . 'Prova/cadastrar'; ?>" class="dropdown-item">Cadastrar</a>
                             </div>
                         </li>
-                        
+
                         <li class="nav-item dropdown ">
                             <a href="#" id="menuEquipe" class="nav-link dropdown-toggle" data-toggle="dropdown">
                                 Equipes
@@ -33,7 +33,7 @@
                                 <a href="<?= $this->config->base_url() . 'Equipe/cadastrar'; ?>" class="dropdown-item">Cadastrar</a>
                             </div>
                         </li>
-                        
+
                         <li class="nav-item dropdown">
                             <a href="#" id="menuIntegrantes" class="nav-link dropdown-toggle" data-toggle="dropdown">
                                 Integrantes
@@ -41,6 +41,16 @@
                             <div class="dropdown-menu" aria-labelledby="menuIntegrantes">
                                 <a href="<?= $this->config->base_url() . 'Integrantes/listar'; ?>" class="dropdown-item">Listar</a>
                                 <a href="<?= $this->config->base_url() . 'Integrantes/cadastrar'; ?>" class="dropdown-item">Cadastrar</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a href="#" id="menuPontuacao" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                Pontuação
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="menuPontuacao">
+                                <a href="<?= $this->config->base_url() . 'Pontuacao/listar'; ?>" class="dropdown-item">Listar</a>
+                                <a href="<?= $this->config->base_url() . 'Pontuacao/cadastrar'; ?>" class="dropdown-item">Cadastrar</a>
                             </div>
                         </li>
 

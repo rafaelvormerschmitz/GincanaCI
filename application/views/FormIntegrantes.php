@@ -13,10 +13,10 @@
                         <option>Selecione uma Equipe</option>
                         <?php
                         foreach ($equipe as $ep) {
-                            echo ' <option ' . (isset($integrantes) ? ($integrantes->id_equipe == $ep->id ? 'selected ' : NULL) : NULL) . ' value="' . $ep->id . '">' . $ep->nome . ' </option>';
+                            echo ' <option ' . (isset($integrantes) ? ($integrantes->id_equipe == $ep->id ? ' selected ' : NULL) : NULL) . ' value="' . $ep->id . '">' . $ep->nome . '</option>';
                         }
                         ?>
-                                                
+
                     </select>
                 </div>
 
