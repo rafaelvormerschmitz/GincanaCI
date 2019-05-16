@@ -22,22 +22,22 @@
 
                 <div class="form-group">
                     <label for = "nome"> Nome:</label>
-                    <input type = "text" name = "nome"  class="form-control" id = "nome" value = "<?= (isset($integrantes)) ? $integrantes->nome : ''; ?>">
+                    <input type="text" name="nome"  class="form-control" id="nome" value="<?= (isset($integrantes)) ? $integrantes->nome : ''; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for = "data_nasc"> Data de Nascimento:</label>
-                    <input type = "date" name = "data_nasc"  class="form-control" id = "data_nasc" value = "<?= (isset($integrantes)) ? $integrantes->data_nasc : ''; ?>">
+                    <input type="date" name="data_nasc"  class="form-control" id="data_nasc" value="<?= (isset($integrantes)) ? $integrantes->data_nasc : ''; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for = "rg"> RG:</label>
-                    <input type = "text" name = "rg"  class="form-control" id = "rg" value = "<?= (isset($integrantes)) ? $integrantes->rg : ''; ?>">
+                    <input type="text" name="rg"  class="form-control" id="rg" value="<?= (isset($integrantes)) ? $integrantes->rg : ''; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for = "cpf"> CPF:</label>
-                    <input type = "text" name = "cpf"  class="form-control" id = "cpf" value = "<?= (isset($integrantes)) ? $integrantes->cpf : ''; ?>">
+                    <input type="text" name="cpf"  class="form-control" id="cpf" value="<?= (isset($integrantes)) ? $integrantes->cpf : ''; ?>">
                 </div>
 
 

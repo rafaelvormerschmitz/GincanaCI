@@ -54,6 +54,13 @@
                             </div>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="#" id="menuRank" class="nav-link">
+                                Rank
+                            </a>
+                            <a href="<?= $this->config->base_url() . 'Rank'; ?>"></a>
+                        </li>
+
                     </ul>
 
                     <ul class="navbar-nav justify-content-end">
@@ -61,6 +68,7 @@
                             <a class="nav-link" href="<?= $this->config->base_url() . 'Usuario/sair'; ?>">
                                 Sair <i class="fas fa-sign-out-alt"></i>
                             </a>
+
                         </li>
                     </ul>
                 </div>

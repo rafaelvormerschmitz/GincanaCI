@@ -6,7 +6,6 @@
             echo (isset($mensagem) ? '<div class="alert alert-success" role="alert">' . $mensagem . '</div>' : '');
             echo validation_errors();
             ?>  
-            
             <form action = "" method = "post">
                 <input type="hidden" name="id" id="id" value="">
 
@@ -49,16 +48,16 @@
                     </select>
                 </div>
 
-                <div class = "form-group">
+                <div class="form-group">
                     <label for="pontos"> Pontos:</label>
-                    <input type="text" name="pontos"  class="form-control" id = "pontos" value = "">
+                    <input type="text" name="pontos" class="form-control" id="pontos" value="<?= (isset($pontuacao->pontos)) ? $pontuacao->pontos : ''; ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="data_hora"> Data e Hora:</label>
-                    <input type="datetime-local" name="data_hora"  class="form-control" id="data_hora" value= "">
-                </div>
+                    <input type="datetime" name="data_hora" class="form-control" id="data_hora" value="<?= (isset($pontuacao->data_hora)) ? $pontuacao->data_hora : ''; ?>">
 
+                </div>
 
                 <button type="submit" class="btn btn-success"><i class="fas fa-check"></i> Enviar</button>
                 <button type="reset" class="btn btn-outline-secondary"><i class="fas fa-redo"></i> Limpar</button> 

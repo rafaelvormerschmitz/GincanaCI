@@ -32,7 +32,7 @@ class Pontuacao extends CI_Controller {
         $this->form_validation->set_rules('pontos', 'pontos', 'required');
         $this->form_validation->set_rules('data_hora', 'data_hora', 'required');
 
-        if ($this->form_validation->run() === FALSE) {
+        if ($this->form_validation->run() == FALSE) {
 
             $dados['pontuacao'] = $this->Pontuacao_model->getAll();
             $dados['equipe'] = $this->Equipe_model->getAll();
@@ -69,13 +69,14 @@ class Pontuacao extends CI_Controller {
             $this->form_validation->set_rules('id_prova', 'id_prova', 'required');
             $this->form_validation->set_rules('id_usuario', 'id_usuario', 'required');
             $this->form_validation->set_rules('pontos', 'pontos', 'required');
+            $this->form_validation->set_rules('data_hora', 'data_hora', 'required');
 
             if ($this->form_validation->run() === false) {
-                $pt['equipe'] = $this->Pontuacao_model->getOne($id);
-                $pt['prova'] = $this->Pontuacao_model->getOne($id);
-                $pt['usuario'] = $this->Pontuacao_model->getOne($id);
                 $pt['pontuacao'] = $this->Pontuacao_model->getOne($id);
-
+                $pt['equipe'] = $this->Equipe_model->getAll();
+                $pt['usuario'] = $this->Usuario_model->getAll();
+                $pt['prova'] = $this->Prova_model->getAll();
+                $pt['data_hora'] = $this->Pontuacao_model->getOne($id);
 
                 $this->load->view('Header');
                 $this->load->view('FormPontuacao', $pt);
